@@ -6,7 +6,7 @@ const Input = ({inputValue, inputChange}) => (
         <TextInput
         value={inputValue}
         style={styles.input}
-        placeholder="What needs to bee done?"
+        placeholder="What needs to be done?"
         placeholderTextColor="#CACACA"
         selectionColor="#666666"
         onChangeText={inputChange}
