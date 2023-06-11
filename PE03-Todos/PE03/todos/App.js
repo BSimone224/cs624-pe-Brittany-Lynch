@@ -19,6 +19,20 @@ class App extends Component {
     this.toggleComplete = this.toggleComplete.bind(this)
     this.deleteTodo = this.deleteTodo.bind(this)
   }
+  
+  componentDidMount(){
+    this.fetchTodos();
+  }
+
+  fetchTodos = async () => {
+    try {
+      const response = await fetch('https://cityutodoapi.azurewebsites.net/todos');
+      const todos = await response.json();
+      this.setState({ todos });
+    } catch (error) {
+      console.error(error);
+    }
+    };
 
   submitTodo () {
     if (this.state.inputValue.match(/^\s*$/)) { 
