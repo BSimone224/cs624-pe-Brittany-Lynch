@@ -11,6 +11,7 @@ import Cities from './src/Cities/Cities'
 import AddCity from './src/AddCity/AddCity'
 import Countries from './src/Countries/Countries'
 import AddCountry from './src/AddCountry/AddCountry'
+import StackNavigator from './src/AddCurrencyInfo';
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +42,8 @@ export default class App extends Component {
           <Tab.Screen name="Countries" initialParams={{countries: this.state.countries, addcountries: this.addcountries}} component={Countries} />
           <Tab.Screen name="AddCountry" initialParams={{countries: this.state.countries, addcountries: this.addcountries}} component={AddCountry} />
         </Tab.Navigator>
+        <StackNavigator />
       </NavigationContainer>
     );
+    }
   }
-}
